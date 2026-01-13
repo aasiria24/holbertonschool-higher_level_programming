@@ -79,7 +79,7 @@ pip install pycodestyle
 Check a file:
 pycodestyle script_name.py
 Authors
-
+Amaal Asiri
 This project is part of the Holberton School curriculum.
 
 ⸻
