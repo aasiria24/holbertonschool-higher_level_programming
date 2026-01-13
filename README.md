@@ -13,20 +13,19 @@ This project covers fundamental Python concepts including:
 - Using pycodestyle for code validation
 
 ## 📁 Project Structure
-python-hello_world/
-├── README.md # This file
-├── project-folder/ # Main project directory
-│ ├── 2-print.py # Print a string
-│ ├── 3-print_number.py # Print integer with string
-│ ├── 4-print_float.py # Print float with precision
-│ ├── 5-print_string.py # String repetition and slicing
-│ ├── 6-concat.py # String concatenation
-│ ├── 7-edges.py # String slicing (first, last, middle)
-│ ├── 8-concat_edges.py # String extraction and concatenation
-│ ├── 9-easter_egg.py # The Zen of Python
-│ └── README.md # Project-specific documentation
+📁 python-hello_world/
+├── README.md                  # This file
+├── project-folder/            # Main project directory
+│   ├── 2-print.py              # Print a string
+│   ├── 3-print_number.py       # Print integer with string
+│   ├── 4-print_float.py        # Print float with precision
+│   ├── 5-print_string.py       # String repetition and slicing
+│   ├── 6-concat.py             # String concatenation
+│   ├── 7-edges.py              # String slicing (first, last, middle)
+│   ├── 8-concat_edges.py       # String extraction and concatenation
+│   ├── 9-easter_egg.py         # The Zen of Python
+│   └── README.md               # Project-specific documentation
 └── (other directories as needed)
-
 
 ## 🎯 Learning Objectives
 
