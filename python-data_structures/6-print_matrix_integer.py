@@ -2,10 +2,7 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-    """Printing the matrix of integers"""
+    """Prints a matrix of integers."""
     for row in matrix:
-        for i, num in enumerate(row):
-            print("{:d}".format(num), end="")
-            if i != len(row) - 1:
-                print(" ", end="")
-                print()
+        formatted_row = ["{:d}".format(num) for num in row]
+        print(" ".join(formatted_row))
