@@ -1,32 +1,32 @@
-Python - Exceptions
+# Python - Exceptions
 
-This project focuses on handling errors and exceptions in Python using try, except, and finally. The tasks demonstrate how to safely handle unexpected inputs, runtime errors, and explicitly raised exceptions without crashing the program.
+- This project focuses on handling errors and exceptions in Python using try, except, and finally. The tasks demonstrate how to safely handle unexpected inputs, runtime errors, and explicitly raised exceptions without crashing the program.
 
-Project Overview
+## Project Overview
 
 In this project, you will practice:
 
-Using try / except / finally
+. *Using try / except / finally
 
-Handling type errors and division errors
+. *Handling type errors and division errors
 
-Working safely with lists
+. *Working safely with lists
 
-Raising built-in Python exceptions
+. *Raising built-in Python exceptions
 
-Writing defensive and robust Python code
+. *Writing defensive and robust Python code
 
-Tasks
+## Tasks
 
-Task 0: Safe Print List
+## Task 0: Safe Print List
 
 Write a function that prints x elements of a list.
 
-Prototype:
+## Prototype:
 
 def safe_print_list(my_list=[], x=0):
 
-Requirements:
+## Requirements:
 
 my_list can contain any type
 
@@ -42,15 +42,15 @@ Do not use len()
 
 Do not import any module
 
-Task 1: Safe Print Integer
+### Task 1: Safe Print Integer
 
 Write a function that prints an integer using formatting.
 
-Prototype:
+## Prototype:
 
 def safe_print_integer(value):
 
-Requirements:
+## Requirements:
 
 value can be any type
 
@@ -66,15 +66,15 @@ Do not use type()
 
 Do not import any module
 
-Task 2: Safe Print List of Integers
+## Task 2: Safe Print List of Integers
 
 Write a function that prints the first x elements of a list, but only integers.
 
-Prototype:
+## Prototype:
 
 def safe_print_list_integers(my_list=[], x=0):
 
-Requirements:
+## Requirements:
 
 Skip non-integer values silently
 
@@ -94,15 +94,15 @@ Do not use len()
 
 Do not import any module
 
-Task 3: Safe Print Division
+## Task 3: Safe Print Division
 
 Write a function that divides two integers and prints the result.
 
-Prototype:
+## Prototype:
 
 def safe_print_division(a, b):
 
-Requirements:
+## Requirements:
 
 Assume a and b are integers
 
@@ -117,15 +117,15 @@ Use "{}".format()
 
 Do not import any module
 
-Task 4: List Division
+## Task 4: List Division
 
 Write a function that divides elements of two lists element by element.
 
-Prototype:
+## Prototype:
 
 def list_division(my_list_1, my_list_2, list_length):
 
-Requirements:
+## Requirements:
 
 Return a new list of length list_length
 
@@ -143,27 +143,27 @@ Use try / except / finally
 
 Do not import any module
 
-Task 5: Raise Exception
+## Task 5: Raise Exception
 
 Write a function that raises a TypeError exception.
 
-Prototype:
+## Prototype:
 
 def raise_exception():
 
-Requirements:
+## Requirements:
 
 Do not import any module
 
-Task 6: Raise Exception with Message
+## Task 6: Raise Exception with Message
 
 Write a function that raises a NameError exception with a custom message.
 
-Prototype:
+## Prototype:
 
 def raise_exception_msg(message=""):
 
-Requirements:
+## Requirements:
 
 Do not import any module
 
