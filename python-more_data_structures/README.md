@@ -62,4 +62,4 @@ Squares all values of a matrix using map only (no loops), returns a new matrix.
 Deletes all keys in a dictionary that have a specific value and returns the dictionary.
 Authors
 
-Amaal Asiri 
+Amaal Asiri
