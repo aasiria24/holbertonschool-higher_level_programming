@@ -30,7 +30,14 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return [
-        [abs(round(el / div, 2)) for el in row]
-        for row in matrix
-    ]
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for el in row:
+            value = round(el / div, 2)
+            if value == 0:
+                value = 0.0
+            new_row.append(value)
+        new_matrix.append(new_row)
+
+    return new_matrix
