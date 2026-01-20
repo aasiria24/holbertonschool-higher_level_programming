@@ -51,14 +51,15 @@ My name is  Wonderland
 >>> say_my_name("John", "Doe")
 My name is John Doe
 
->>> # Test with special characters
 >>> say_my_name("Jean-Claude", "Van Damme")
 My name is Jean-Claude Van Damme
 
->>> # Test with spaces in names
 >>> say_my_name("Mary Jane", "Watson")
 My name is Mary Jane Watson
 
->>> # Test with very long names
 >>> say_my_name("A" * 50, "B" * 50)
 My name is AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+
+>>> # Test with empty first name but non-empty last name
+>>> say_my_name("", "Smith")
+My name is  Smith
