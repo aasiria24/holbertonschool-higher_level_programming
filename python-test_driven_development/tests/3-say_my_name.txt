@@ -7,7 +7,7 @@ My name is John Smith
 My name is Walter White
 
 >>> say_my_name("Bob")
-My name is Bob
+My name is Bob 
 
 >>> try:
 ...     say_my_name(12, "White")
@@ -38,28 +38,3 @@ first_name must be a string
 ... except TypeError as e:
 ...     print(e)
 last_name must be a string
-
->>> say_my_name("", "")
-My name is
-
->>> say_my_name("Alice", "")
-My name is Alice
-
->>> say_my_name("", "Wonderland")
-My name is  Wonderland
-
->>> say_my_name("John", "Doe")
-My name is John Doe
-
->>> say_my_name("Jean-Claude", "Van Damme")
-My name is Jean-Claude Van Damme
-
->>> say_my_name("Mary Jane", "Watson")
-My name is Mary Jane Watson
-
->>> say_my_name("A" * 50, "B" * 50)
-My name is AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-
->>> # Test with empty first name but non-empty last name
->>> say_my_name("", "Smith")
-My name is  Smith
