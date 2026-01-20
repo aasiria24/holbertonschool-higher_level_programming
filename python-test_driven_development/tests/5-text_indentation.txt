@@ -1,0 +1,37 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello world.")
+Hello world.
+
+>>> text_indentation("How are you? I am fine.")
+How are you?
+
+I am fine.
+
+>>> text_indentation("This is a test: check carefully.")
+This is a test:
+
+check carefully.
+
+>>> text_indentation("Multiple sentences. Another one? And more: yes!")
+Multiple sentences.
+
+Another one?
+
+And more:
+
+yes!
+
+>>> text_indentation("   Leading and trailing spaces.  ")
+Leading and trailing spaces.
+
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+>>> text_indentation("")
+
+>>> text_indentation("No punctuation here")
+No punctuation here
