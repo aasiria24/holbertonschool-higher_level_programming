@@ -3,22 +3,12 @@
 Module: 5-text_indentation
 
 Contains function: text_indentation(text)
-Prints a text with 2 new lines after each of these characters: ., ? and :
+Prints a text with a new line after each ., ? and :
 """
 
-
 def text_indentation(text):
-    """Prints text with 2 new lines after each ., ? and :
+    """Prints text with a new line after each ., ? and :"""
 
-    Args:
-        text: The text to process (must be a string)
-
-    Returns:
-        None
-
-    Raises:
-        TypeError: If text is not a string
-    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -26,10 +16,10 @@ def text_indentation(text):
     length = len(text)
 
     while i < length:
-        print(text[i], end='')
+        print(text[i], end='')  
 
         if text[i] in ".?:":
-            print()
+            print()  
 
             i += 1
             while i < length and text[i] == ' ':
@@ -38,4 +28,4 @@ def text_indentation(text):
 
         i += 1
 
-        print()
+    print() 
