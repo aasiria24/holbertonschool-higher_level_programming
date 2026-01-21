@@ -20,10 +20,12 @@ def text_indentation(text):
     
     i = 0
     while i < len(text):
-        # Skip spaces at the beginning of a line
-        if i > 0 and text[i-1] in ".?:" and text[i] == ' ':
-            i += 1
-            continue
+        # Skip all spaces at the beginning of a line (after special characters)
+        if i > 0 and text[i-1] in ".?:":
+            while i < len(text) and text[i] == ' ':
+                i += 1
+            if i >= len(text):
+                break
         
         print(text[i], end="")
         
