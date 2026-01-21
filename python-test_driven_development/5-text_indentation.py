@@ -12,7 +12,7 @@ def text_indentation(text):
     Args:
         text: String to be printed with formatting
 
-        Raises:
+    Raises:
         TypeError: If text is not a string
     """
     if not isinstance(text, str):
@@ -27,9 +27,9 @@ def text_indentation(text):
             if i >= len(text):
                 break
 
-            print(text[i], end="")
+        print(text[i], end="")
 
         if text[i] in ".?:":
-            print("\n\n", end="") 
+            print("\n\n", end="")
 
-            i += 1
+        i += 1
