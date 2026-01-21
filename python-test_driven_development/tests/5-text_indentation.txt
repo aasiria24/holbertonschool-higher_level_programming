@@ -1,106 +1,128 @@
-Test cases for text_indentation function
-=========================================
+The ``5-text_indentation`` module
+============================
 
->>> text_indentation = __import__('5-text_indentation').text_indentation
+Using ``text_indentation``
+---------------------
 
-Basic tests:
->>> text_indentation("Hello.")
-Hello.
-<BLANKLINE>
+Importing function from the module:
 
->>> text_indentation("Hello. How are you?")
-Hello.
-<BLANKLINE>
-How are you?
-<BLANKLINE>
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Hello: World. Test? End")
-Hello:
-<BLANKLINE>
-World.
-<BLANKLINE>
-Test?
-<BLANKLINE>
-End
+Printing a large message
 
-Test with multiple spaces after special characters:
->>> text_indentation("Hello.    How are you?")
-Hello.
-<BLANKLINE>
-How are you?
-<BLANKLINE>
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
->>> text_indentation("First:   Second.   Third?   Fourth")
-First:
-<BLANKLINE>
-Second.
-<BLANKLINE>
-Third?
-<BLANKLINE>
-Fourth
+Printing a word with spaces around
 
-Test with no special characters:
->>> text_indentation("Hello World")
-Hello World
+    >>> text_indentation("    Holberton    ")
+    Holberton
 
-Test with consecutive special characters:
->>> text_indentation("Hello.:?World")
-Hello.
-<BLANKLINE>
-<BLANKLINE>
-:
-<BLANKLINE>
-<BLANKLINE>
-?
-<BLANKLINE>
-<BLANKLINE>
-World
+Printing a word with a special character at the end
 
-Test with text at the end:
->>> text_indentation("Hello. How are you? I'm fine")
-Hello.
-<BLANKLINE>
-How are you?
-<BLANKLINE>
-I'm fine
+    >>> text_indentation("    Hello    .")
+    Hello.
+    <BLANKLINE>
 
-Edge cases:
->>> text_indentation("")
+Printing all special characters
 
->>> text_indentation(".")
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
 
-.
-<BLANKLINE>
+Passing Node as a text
 
->>> text_indentation("?")
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: text must be a string
 
-?
-<BLANKLINE>
+Passing a number as a text
 
->>> text_indentation(":")
+    >>> text_indentation(10)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: text must be a string
 
-:
-<BLANKLINE>
+Printing a text with special characters
 
-Test with newlines in input:
->>> text_indentation("Hello.\nHow are you?")
-Hello.
-<BLANKLINE>
-How are you?
-<BLANKLINE>
+    >>> text_indentation("Betty: Holberton? Python is. cool   ")
+    Betty:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    Python is.
+    <BLANKLINE>
+    cool
 
-Error cases:
->>> text_indentation(None)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
+Printing a char number
 
->>> text_indentation(123)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
+    >>> text_indentation('2')
+    2
 
->>> text_indentation([])
-Traceback (most recent call last):
-...
-TypeError: text must be a string
+Passing an empty string
+
+    >>> text_indentation('    ')
+
+Passing a new line as a text
+
+    >>> text_indentation('\n')
+    <BLANKLINE>
+
+Passing a special character and some special characters
+
+    >>> text_indentation('\n.\n?\n:')
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Passing a text with spaces and one new line
+
+    >>> text_indentation("   \n")
+    <BLANKLINE>
+
+Passing a text with spaces and one new line 2
+
+   >>> text_indentation("   \n   ")
+   <BLANKLINE>
+
+Passing a text with spaces and one new line 3
+
+   >>> text_indentation("\n   ")
+   <BLANKLINE>
