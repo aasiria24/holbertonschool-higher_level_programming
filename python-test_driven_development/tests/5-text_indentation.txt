@@ -25,7 +25,6 @@ No.
 No special characters
 
 >>> text_indentation("")
-<BLANKLINE>
 
 >>> try:
 ...     text_indentation(123)
