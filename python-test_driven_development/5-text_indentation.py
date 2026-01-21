@@ -9,14 +9,14 @@ after each of these characters: ., ? and :
 def text_indentation(text):
     """
     Prints text with 2 new lines after each '.', '?', and ':'
-    
+
     Args:
         text (str): The text to format and print
-    
-    Raises:
+
+        Raises:
         TypeError: If text is not a string
-    
-    Examples:
+
+        Examples:
         >>> text_indentation("Hello. How are you? I'm fine: thank you.")
         Hello.
         <BLANKLINE>
@@ -28,21 +28,21 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     special_chars = ['.', '?', ':']
-    
+
     i = 0
     length = len(text)
-    
+
     while i < length:
         print(text[i], end='')
-        
+
         if text[i] in special_chars:
             print('\n')
-            
+
             i += 1
             while i < length and text[i] == ' ':
                 i += 1
             continue
-        
+
         i += 1
