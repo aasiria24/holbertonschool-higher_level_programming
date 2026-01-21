@@ -1,48 +1,49 @@
 #!/usr/bin/python3
 """
-Module for text indentation
-This module provides a function to print text with 2 new lines
-after each of these characters: ., ? and :
+Text Indentation Module
+
+This module provides a function that prints a text with 2 new lines
+after '.', '?' and ':'.
 """
 
 
 def text_indentation(text):
     """
-    Prints text with 2 new lines after each '.', '?', and ':'
+    Prints a text with 2 new lines after '.', '?' and ':'.
 
     Args:
-        text (str): The text to format and print
+        text (str): The input text.
 
-        Raises:
-        TypeError: If text is not a string
-
-        Examples:
-        >>> text_indentation("Hello. How are you? I'm fine: thank you.")
-        Hello.
-        <BLANKLINE>
-        How are you?
-        <BLANKLINE>
-        I'm fine:
-        <BLANKLINE>
-        thank you.
+    Raises:
+        TypeError: If text is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    special_chars = ['.', '?', ':']
+    text = text.strip()
+    if text == "":
+        return
 
     i = 0
-    length = len(text)
+    n = len(text)
 
-    while i < length:
-        print(text[i], end='')
+    while i < n:
+        ch = text[i]
 
-        if text[i] in special_chars:
-            print('\n')
+        print(ch, end="")
 
-            i += 1
-            while i < length and text[i] == ' ':
-                i += 1
+        if ch in ".?:":
+            j = i + 1
+            while j < n and text[j] == ch:
+                print(text[j], end="")
+                j += 1
+
+            print("\n")
+
+            while j < n and text[j] in " \t\n":
+                j += 1
+
+            i = j
             continue
 
         i += 1
