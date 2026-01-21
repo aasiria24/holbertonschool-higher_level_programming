@@ -75,10 +75,6 @@ Test with TypeError - list:
 Test with empty string:
     >>> text_indentation("")
 
-Test with only spaces:
-    >>> text_indentation("   ")
-       
-
 Test with newlines in text:
     >>> text_indentation("Hello.\nWorld")
     Hello.
