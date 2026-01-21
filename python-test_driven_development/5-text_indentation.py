@@ -8,16 +8,15 @@ def text_indentation(text):
     """Prints text with 2 new lines after . ? :"""
     if type(text) is not str:
         raise TypeError("text must be a string")
-    
+
     text = text.strip()
-    
+
     if text == "":
         return
-    
-    # Handle single special character case
+
     if text in ['.', '?', ':']:
-        return
-    
+        return 
+
     i = 0
     while i < len(text):
         if text[i] in ['.', '?', ':']:
