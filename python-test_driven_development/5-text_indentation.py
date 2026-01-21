@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Module: 5-text_indentation
+
 Prints a text with 2 new lines after '.', '?' and ':'
 """
 
@@ -26,6 +27,6 @@ def text_indentation(text):
             i += 1
             while i < len(text) and text[i] == " ":
                 i += 1
-            else:
-        print(text[i], end="")
-        i += 1
+        else:
+            print(text[i], end="")
+            i += 1
