@@ -2,11 +2,8 @@
 
 >>> text_indentation("Hello. How are you? I'm fine: thank you.")
 Hello.
-
 How are you?
-
 I'm fine:
-
 thank you.
 
 >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
