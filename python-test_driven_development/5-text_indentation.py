@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
 Module: 5-text_indentation
-
-Contains function: text_indentation(text)
 Prints a text with a new line after each of these characters: ., ? and :
 """
 
@@ -18,11 +16,15 @@ def text_indentation(text):
 
     while i < length:
         if text[i] in ".?:":
-            print(text[i], end="\n")  # ← فقط سطر واحد
+            print(text[i], end="\n")  # العلامة + newline
             i += 1
             while i < length and text[i] == " ":
                 i += 1
             continue
         else:
-            print(text[i], end="")
+            print(text[i], end="")  # باقي الحروف بدون newline
         i += 1
+
+    # ← تأكد من أن النص النهائي يحتوي على newline
+    print("", end="")
+
