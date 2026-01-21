@@ -8,16 +8,16 @@ Prints text with 2 new lines after '.', '?', and ':'.
 def text_indentation(text):
     """
     Prints text with 2 new lines after '.', '?', and ':'.
-    
+
     Args:
         text: String to be printed with formatting
-        
-    Raises:
+
+        Raises:
         TypeError: If text is not a string
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     i = 0
     while i < len(text):
         # Skip all spaces at the beginning of a line (after special characters)
@@ -26,10 +26,10 @@ def text_indentation(text):
                 i += 1
             if i >= len(text):
                 break
-        
-        print(text[i], end="")
-        
+
+            print(text[i], end="")
+
         if text[i] in ".?:":
-            print("\n\n", end="")
-        
-        i += 1
+            print("\n\n", end="") 
+
+            i += 1
