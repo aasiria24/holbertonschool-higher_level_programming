@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module for lazy matrix multiplication using NumPy
+101-lazy_matrix_mul.py
+Lazy matrix multiplication using NumPy
 """
 import numpy as np
 
@@ -9,66 +10,50 @@ def lazy_matrix_mul(m_a, m_b):
     """
     Multiplies two matrices using NumPy.
     
+    Args:
+        m_a: First matrix
+        m_b: Second matrix
+    
     Returns:
-        The product matrix as a NumPy array
+        Product of m_a and m_b
+    
+    Raises:
+        TypeError: If inputs are not lists
+        ValueError: If matrices cannot be multiplied (numpy error)
     """
-    # Basic validation
-    if not isinstance(m_a, list) or not isinstance(m_b, list):
+    if not isinstance(m_a, list):
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
+    if not isinstance(m_b, list):
         raise TypeError("Scalar operands are not allowed, use '*' instead")
     
-    # Convert to numpy arrays
-    try:
-        a = np.array(m_a, dtype=float)
-        b = np.array(m_b, dtype=float)
-    except:
-        raise ValueError("m_a and m_b must contain only numbers")
+    a = np.array(m_a, dtype=np.float64)
+    b = np.array(m_b, dtype=np.float64)
     
-    # Check dimensions
-    if a.ndim != 2 or b.ndim != 2:
-        raise ValueError("Both arguments must be 2D matrices")
-    
-    if a.shape[1] != b.shape[0]:
-        raise ValueError("m_a and m_b can't be multiplied")
-    
-    # Multiply
-    result = np.dot(a, b)
-    
-    # Convert integers back to int type if possible
-    if np.all(np.equal(np.mod(result, 1), 0)):
-        result = result.astype(int)
-    
-    return result
+    return np.matmul(a, b)
 
 
-def print_numpy_matrix(matrix):
-    """
-    Prints numpy matrix in the required format.
-    """
-    if matrix.ndim == 1:
-        # 1D array
-        print("[" + " ".join(str(int(x) if x.is_integer() else x) for x in matrix) + "]")
-    else:
-        # 2D array
-        rows = []
-        for row in matrix:
-            elements = []
-            for x in row:
-                # Check if integer (handle both numpy and python types)
-                if hasattr(x, 'is_integer') and x.is_integer():
-                    elements.append(str(int(x)))
-                elif isinstance(x, (int, np.integer)):
-                    elements.append(str(x))
-                else:
-                    elements.append(str(x))
-            rows.append("[" + " ".join(elements) + "]")
-        print("[" + "\n ".join(rows) + "]")
-
-
-# اختبار مباشر
 if __name__ == "__main__":
-    # Example from the test
-    m_a = [[1, 2], [3, 4]]
-    m_b = [[5, 6], [7, 8]]
+    import sys
     
-    result = lazy_matrix_mul(m_a, m_b)
-    print_numpy_matrix(result)
+    def format_output(matrix):
+        """Formats numpy matrix output"""
+        if isinstance(matrix, np.ndarray):
+            rows = []
+            for row in matrix:
+                elements = [str(int(x)) if x.is_integer() else str(x) for x in row]
+                rows.append("[" + " ".join(elements) + "]")
+            
+            if len(rows) == 1:
+                return rows[0]
+            return "[" + "\n ".join(rows) + "]"
+        return str(matrix)
+    
+    if len(sys.argv) > 2:
+        import ast
+        try:
+            m_a = ast.literal_eval(sys.argv[1])
+            m_b = ast.literal_eval(sys.argv[2])
+            result = lazy_matrix_mul(m_a, m_b)
+            print(format_output(result))
+        except Exception as e:
+            print(e)
