@@ -15,7 +15,7 @@ def text_indentation(text):
         return
 
     if text in ['.', '?', ':']:
-        return 
+        return
 
     i = 0
     while i < len(text):
