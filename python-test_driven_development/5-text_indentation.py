@@ -1,13 +1,24 @@
 #!/usr/bin/python3
 """
 Module: 5-text_indentation
-Prints a text with a new line after each of these characters: ., ? and :
+
+Contains function: text_indentation(text)
+Prints a text with 2 new lines after each of these characters: ., ? and :
 """
 
 
 def text_indentation(text):
-    """Prints text with new line after each ., ? and :"""
+    """Prints text with 2 new lines after each ., ? and :
 
+    Args:
+        text: The text to process (must be a string)
+
+    Returns:
+        None
+
+    Raises:
+        TypeError: If text is not a string
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -15,16 +26,14 @@ def text_indentation(text):
     length = len(text)
 
     while i < length:
+        print(text[i], end='')
+
         if text[i] in ".?:":
-            print(text[i], end="\n")  # العلامة + newline
+            print("\n")
+
             i += 1
-            while i < length and text[i] == " ":
+            while i < length and text[i] == ' ':
                 i += 1
             continue
-        else:
-            print(text[i], end="")  # باقي الحروف بدون newline
+
         i += 1
-
-    # ← تأكد من أن النص النهائي يحتوي على newline
-    print("", end="")
-
