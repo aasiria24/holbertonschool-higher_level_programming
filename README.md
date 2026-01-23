@@ -151,7 +151,7 @@ cd python-learning-projects
 chmod +x *.py
 
 ### Running Tests
-```bash
+
 # Run doctests
 python3 -m doctest ./tests/* -v
 
