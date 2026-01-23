@@ -21,14 +21,40 @@ def lazy_matrix_mul(m_a, m_b):
         ValueError: For various input validation errors
         TypeError: For type-related errors
     """
-    try:
-        arr_a = np.array(m_a)
-        arr_b = np.array(m_b)
-    except Exception as e:
-        raise type(e)(str(e))
+    if not isinstance(m_a, list):
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
+    if not isinstance(m_b, list):
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
     
-    try:
-        result = np.matmul(arr_a, arr_b)
-        return result
-    except Exception as e:
-        raise type(e)(str(e))
+    if len(m_a) == 0:
+        if len(m_b) == 0:
+            raise ValueError("shapes (0,) and (0,) not aligned: 0 (dim 0) != 0 (dim 0)")
+        arr_b = np.array(m_b)
+        raise ValueError(f"shapes (0,) and {arr_b.shape} not aligned: 0 (dim 0) != {arr_b.shape[0]} (dim 0)")
+    
+    if len(m_b) == 0:
+        arr_a = np.array(m_a)
+        raise ValueError(f"shapes {arr_a.shape} and (0,) not aligned: {arr_a.shape[-1]} (dim 1) != 0 (dim 0)")
+    
+    if isinstance(m_a[0], list) and len(m_a[0]) == 0:
+        if isinstance(m_b[0], list) and len(m_b[0]) == 0:
+            raise ValueError("shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)")
+        arr_b = np.array(m_b)
+        raise ValueError(f"shapes (1,0) and {arr_b.shape} not aligned: 0 (dim 1) != {arr_b.shape[0]} (dim 0)")
+    
+    if isinstance(m_b[0], list) and len(m_b[0]) == 0:
+        arr_a = np.array(m_a)
+        raise ValueError(f"shapes {arr_a.shape} and (1,0) not aligned: {arr_a.shape[-1]} (dim 1) != 1 (dim 0)")
+    
+    arr_a = np.array(m_a)
+    arr_b = np.array(m_b)
+    
+    if arr_a.ndim < 2:
+        arr_a = arr_a.reshape(1, -1) if arr_a.ndim == 1 else arr_a.reshape(1, 1)
+    if arr_b.ndim < 2:
+        arr_b = arr_b.reshape(-1, 1) if arr_b.ndim == 1 else arr_b.reshape(1, 1)
+    
+    if arr_a.shape[-1] != arr_b.shape[0]:
+        raise ValueError(f"shapes {arr_a.shape} and {arr_b.shape} not aligned: {arr_a.shape[-1]} (dim 1) != {arr_b.shape[0]} (dim 0)")
+    
+    return np.matmul(arr_a, arr_b)
