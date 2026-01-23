@@ -8,13 +8,23 @@ import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """Multiply two matrices using NumPy.
+    """
+    Multiplies two matrices using NumPy.
 
     Args:
-        m_a: First matrix
-        m_b: Second matrix
+    m_a (list of lists): First matrix
+    m_b (list of lists): Second matrix
 
     Returns:
-        Result of matrix multiplication
+    A new matrix which is the result of the multiplication
+
+    Raises:
+    TypeError: if matrices are not lists of lists of integers/floats
+    ValueError: if matrices are empty or cannot be multiplied
     """
-    return np.matmul(m_a, m_b)
+    try:
+        return np.matmul(m_a, m_b)
+    except ValueError as e:
+        raise ValueError(str(e))
+    except TypeError as e:
+        raise TypeError(str(e))
