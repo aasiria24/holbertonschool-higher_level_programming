@@ -1,30 +1,43 @@
-#!/usr/bin/python3
 # Amaal Asiri <github: aasiria24>
+#!/usr/bin/python3
 """
-Module for lazy_matrix_mul function.
-Multiplies two matrices using NumPy.
+Module: 101-lazy_matrix_mul
+Multiplies two matrices using NumPy
 """
+
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """
-    Multiplies two matrices using NumPy.
+    if not isinstance(m_a, list):
+        raise TypeError
+    if not isinstance(m_b, list):
+        raise TypeError
 
-    Args:
-    m_a (list of lists): First matrix
-    m_b (list of lists): Second matrix
+    if m_a == [] or m_a == [[]]:
+        raise ValueError
+    if m_b == [] or m_b == [[]]:
+        raise ValueError
 
-    Returns:
-    A new matrix which is the result of the multiplication
+    if not all(isinstance(row, list) for row in m_a):
+        raise TypeError
+    if not all(isinstance(row, list) for row in m_b):
+        raise TypeError
 
-    Raises:
-    TypeError: if matrices are not lists of lists of integers/floats
-    ValueError: if matrices are empty or cannot be multiplied
-    """
-    try:
-        return np.matmul(m_a, m_b)
-    except ValueError as e:
-        raise ValueError(str(e))
-    except TypeError as e:
-        raise TypeError(str(e))
+    if not all(all(isinstance(el, (int, float)) for el in row) for row in m_a):
+        raise TypeError
+    if not all(all(isinstance(el, (int, float)) for el in row) for row in m_b):
+        raise TypeError
+
+    row_len_a = len(m_a[0])
+    if not all(len(row) == row_len_a for row in m_a):
+        raise TypeError
+
+    row_len_b = len(m_b[0])
+    if not all(len(row) == row_len_b for row in m_b):
+        raise TypeError
+
+    if row_len_a != len(m_b):
+        raise ValueError
+
+    return np.matmul(m_a, m_b)
