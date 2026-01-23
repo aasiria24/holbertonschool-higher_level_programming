@@ -1,14 +1,15 @@
-# Amaal Asiri <github: aasiria24>
 #!/usr/bin/python3
 """
 Module: 101-lazy_matrix_mul
-Multiplies two matrices using NumPy
 """
 
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
+    """
+    Multiplies two matrices using NumPy
+    """
     if not isinstance(m_a, list):
         raise TypeError
     if not isinstance(m_b, list):
