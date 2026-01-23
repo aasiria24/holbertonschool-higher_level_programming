@@ -1,42 +1,34 @@
 #!/usr/bin/python3
 """
-101-lazy_matrix_mul.py
-Simple solution that returns formatted string
+Module for lazy_matrix_mul function.
+Multiplies two matrices using NumPy.
 """
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
     """
-    Multiplies two matrices and returns formatted string.
-    """
-    if not isinstance(m_a, list) or not isinstance(m_b, list):
-        raise TypeError("Scalar operands are not allowed, use '*' instead")
-    
-    a = np.array(m_a, dtype=np.float64)
-    b = np.array(m_b, dtype=np.float64)
-    
-    result = np.matmul(a, b)
-    
-    return format_numpy_matrix(result)
+    Multiplies two matrices using NumPy.
 
+    Args:
+        m_a: First matrix (list of lists of integers or floats)
+        m_b: Second matrix (list of lists of integers or floats)
 
-def format_numpy_matrix(mat):
+    Returns:
+        Result of matrix multiplication as a numpy array
+
+    Raises:
+        ValueError: For various input validation errors
+        TypeError: For type-related errors
     """
-    Format numpy matrix to remove decimal points for integers.
-    """
-    if mat.ndim == 1:
-        formatted = [str(int(x)) if x.is_integer() else str(x) for x in mat]
-        return "[" + " ".join(formatted) + "]"
+    try:
+        arr_a = np.array(m_a)
+        arr_b = np.array(m_b)
+    except Exception as e:
+        raise type(e)(str(e))
     
-    lines = []
-    for i, row in enumerate(mat):
-        formatted_row = [str(int(x)) if x.is_integer() else str(x) for x in row]
-        row_str = "[" + " ".join(formatted_row) + "]"
-        
-        if i == 0:
-            lines.append(row_str)
-        else:
-            lines.append(" " + row_str)
-    
-    return "[" + "\n".join(lines) + "]"
+    try:
+        result = np.matmul(arr_a, arr_b)
+        return result
+    except Exception as e:
+        raise type(e)(str(e))
