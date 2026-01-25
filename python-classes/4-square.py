@@ -6,23 +6,23 @@ class Square:
     """Represents a square with a private validated size."""
 
     def __init__(self, size=0):
-        """Initialize a square with optional size."""
+        """Initialize a new Square with an optional size."""
         self.size = size
 
-        @property
-        def size(self):
-        """Getter method to retrieve th size of the square."""
-            return self.__size
+    @property
+    def size(self):
+        """Retrieve the size of the square."""
+        return self.__size
 
-            @size.setter
-            def size(self, value):
-            """Setter method to set the size of the square."""
-            if not isinstance(value, int):
-                raise TypeError("size must be an integer")
-            if value < 0:
-                raise ValueError("size must be >= 0")
-            self.__size = value
+    @size.setter
+    def size(self, value):
+        """Set the size of the square with validation."""
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
-            def area(self):
-                """Calcualte and return the current area of the square."""
-                return self.__size ** self.__size
+    def area(self):
+        """Return the current area of the square."""
+        return self.__size * self.__size
