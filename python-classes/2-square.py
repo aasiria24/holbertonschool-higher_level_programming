@@ -7,12 +7,16 @@ This module defines a square class with validated size attribute.
 
 class Square:
     """
-    A class that defines a square.
+    This class defines a square using a private instance attribute.
+    It ensures that the size provided is always a valid non-negative integer.
     """
 
     def __init__(self, size=0):
         """
         Initalizes a new Square instance with validation.
+
+        The size of the square must be an integer greater than or equal to zero.
+        Otherwise, an appropriate exception will be raised.
 
         Args:
         size (int, optional): The size of the square. Defaults to 0.
