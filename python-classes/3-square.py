@@ -3,27 +3,10 @@
 
 
 class Square:
-    """
-    This class represent a square shape.
-
-    It store the size of the square as a private instance attribute
-    and provides a public method to calculate the area of the square.
-    """
+    """Represent a square."""
     
     def __init__(self, size=0):
-        """
-        Initializes a new Square instance.
-        
-        The size must be an integer greater than or equal to zero.
-        if the value provided is invalid, an exception is raised.
-
-        Args:
-            size (int, optional): The size of the square.
-            
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
-        """
+        """Initializes a new Square instance."""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
@@ -32,10 +15,5 @@ class Square:
         self.__size = size
     
     def area(self):
-        """
-        Calculates and returns the area of the square.
-        
-        Returns:
-            int: The area of the square (size * size).
-        """
+        """Returns the area of the square."""
         return self.__size ** 2
