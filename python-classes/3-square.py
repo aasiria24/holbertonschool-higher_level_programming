@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-This module defines a Square class with area calculation.
-The class validates the size value and can compute the square area.
-"""
+"""Defines a Square class."""
 
 
 class Square:
@@ -15,13 +12,13 @@ class Square:
     
     def __init__(self, size=0):
         """
-        Initializes a new Square instance with validation.
+        Initializes a new Square instance.
         
         The size must be an integer greater than or equal to zero.
         if the value provided is invalid, an exception is raised.
 
         Args:
-            size (int, optional): The size of the square. Defaults to 0.
+            size (int, optional): The size of the square.
             
         Raises:
             TypeError: If size is not an integer.
