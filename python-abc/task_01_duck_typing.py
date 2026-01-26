@@ -1,30 +1,41 @@
 #!/usr/bin/env python3
-from abc import ABCMeta, abstractmethod
+"""Shapes, interfaces, and duck typing."""
+
+from abc import ABC, abstractmethod
+import math
 
 
-class Shape(metaclass=ABCMeta):
+class Shape(ABC):
+    """Abstract base class for shapes."""
+
     @abstractmethod
     def area(self):
+        """Return the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
+        """Return the perimeter of the shape."""
         pass
 
 
 class Circle(Shape):
-    def __init__(self, radius):
+    """Circle shape."""
+
+    def __init__(self, radius=0):
         self.radius = radius
 
     def area(self):
-        return 3.141592653589793 * self.radius ** 2
+        return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        return 2 * 3.141592653589793 * self.radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    def __init__(self, width, height):
+    """Rectangle shape."""
+
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
 
@@ -36,5 +47,6 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    print("Area:", shape.area())
-    print("Perimeter:", shape.perimeter())
+    """Print the area and perimeter of any shape-like object (duck typing)."""
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
