@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines a Rectangle class with class method for creating squares"""
+"""Module that defines a Rectangle class with class method for squares"""
 
 
 class Rectangle:
@@ -147,7 +147,8 @@ class Rectangle:
         """Create a new Rectangle instance with equal width and height
 
         Args:
-            size (int, optional): The size for both width and height. Defaults to 0.
+            size (int, optional): The size for both width and height.
+            Defaults to 0.
 
         Returns:
             Rectangle: A new Rectangle instance with width == height == size
