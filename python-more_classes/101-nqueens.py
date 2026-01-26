@@ -35,7 +35,7 @@ def is_safe(board, row, col, n):
             return False
         i += 1
         j -= 1
-
+    
     return True
 
 
