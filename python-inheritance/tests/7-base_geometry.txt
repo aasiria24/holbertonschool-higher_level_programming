@@ -38,7 +38,7 @@ TypeError: height must be an integer
 
 Test integer_validator with boolean (should raise TypeError)
 >>> bg.integer_validator("flag", True)
-Traceback (most recent last):
+Traceback (most recent call last):
 ...
 TypeError: flag must be an integer
 
