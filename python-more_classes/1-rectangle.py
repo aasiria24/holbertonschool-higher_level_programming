@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with width and height properties"""
+"""Module that defines a Rectangle class with width and height properties"""
 
 
 class Rectangle:
@@ -14,24 +14,24 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        
-        @property
-        def width(self):
+    
+    @property
+    def width(self):
         """Getter method for the width attribute
         
         Returns:
             int: The width of the rectangle
         """
         return self.__width
-        
-        @width.setter
-        def width(self, value):
+    
+    @width.setter
+    def width(self, value):
         """Setter method for the width attribute with validation
         
         Args:
             value (int): The width value to set
             
-            Raises:
+        Raises:
             TypeError: If value is not an integer
             ValueError: If value is less than 0
         """
@@ -40,24 +40,24 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-        
-        @property
-        def height(self):
+    
+    @property
+    def height(self):
         """Getter method for the height attribute
         
         Returns:
             int: The height of the rectangle
         """
         return self.__height
-        
-        @height.setter
-        def height(self, value):
+    
+    @height.setter
+    def height(self, value):
         """Setter method for the height attribute with validation
         
         Args:
             value (int): The height value to set
             
-            Raises:
+        Raises:
             TypeError: If value is not an integer
             ValueError: If value is less than 0
         """
