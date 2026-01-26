@@ -29,7 +29,7 @@ class Rectangle:
 
         Args:
             value (int): The width value to set
-            
+
         Raises:
             TypeError: If value is not an integer
             ValueError: If value is less than 0
