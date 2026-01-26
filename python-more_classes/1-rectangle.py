@@ -16,7 +16,7 @@ class Rectangle:
         self.height = height
         
         @property
-    def width(self):
+        def width(self):
         """Getter method for the width attribute
         
         Returns:
@@ -25,7 +25,7 @@ class Rectangle:
         return self.__width
         
         @width.setter
-    def width(self, value):
+        def width(self, value):
         """Setter method for the width attribute with validation
         
         Args:
@@ -42,7 +42,7 @@ class Rectangle:
         self.__width = value
         
         @property
-    def height(self):
+        def height(self):
         """Getter method for the height attribute
         
         Returns:
@@ -51,7 +51,7 @@ class Rectangle:
         return self.__height
         
         @height.setter
-    def height(self, value):
+        def height(self, value):
         """Setter method for the height attribute with validation
         
         Args:
