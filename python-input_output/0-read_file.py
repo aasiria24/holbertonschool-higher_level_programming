@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module for reading and printing the contents of a file.
+"""
 
 def read_file(filename=""):
     """
