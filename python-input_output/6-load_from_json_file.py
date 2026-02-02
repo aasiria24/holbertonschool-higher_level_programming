@@ -2,7 +2,7 @@
 """
 Module to create an object from json file.
 """
-import json 
+import json
 
 
 def load_from_json_file(filename):
