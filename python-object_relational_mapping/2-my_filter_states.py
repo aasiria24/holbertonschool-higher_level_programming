@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-Displays all values in the states table where name matches the argument.
-Takes 4 arguments: mysql username, password, database name, state name.
-"""
-
 import MySQLdb
 import sys
 
@@ -19,12 +14,11 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    # Using format() as required by the project
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4])
-
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(sys.argv[4])
     cursor.execute(query)
 
-    for row in cursor.fetchall():
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
 
     cursor.close()
