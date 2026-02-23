@@ -26,10 +26,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    # Retrieve all states with the exact name provided by the user, sorted by id
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
-
-    cursor.execute(query)
+    # Execute SQL query: select states with the exact given name, ordered by id
+    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name))
 
     # Print all matching rows
     for row in cursor.fetchall():
