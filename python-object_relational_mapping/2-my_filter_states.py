@@ -26,13 +26,12 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    # Format the query with user input (as required)
+    # Retrieve all states with the exact name provided by the user, sorted by id
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
 
-    # Execute the SQL query to get states with the given name
     cursor.execute(query)
 
-    # Fetch and print all matching rows
+    # Print all matching rows
     for row in cursor.fetchall():
         print(row)
 
