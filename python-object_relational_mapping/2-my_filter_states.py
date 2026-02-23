@@ -10,7 +10,6 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Get command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -27,10 +26,10 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    # Create the query using format (as required)
+    # Format the query with user input (as required)
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
 
-    # Execute the query
+    # Execute the SQL query to get states with the given name
     cursor.execute(query)
 
     # Fetch and print all matching rows
