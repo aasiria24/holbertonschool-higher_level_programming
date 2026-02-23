@@ -1,24 +1,40 @@
 #!/usr/bin/python3
+"""
+Script that takes an argument and displays all values in the states table
+where name matches the argument.
+Usage: ./2-my_filter_states.py <mysql username> <mysql password>
+                               <database name> <state name searched>
+"""
+
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    # Get command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
+
+    # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        charset="utf8"
+        user=username,
+        passwd=password,
+        db=database
     )
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = \"{}\" ORDER BY states.id ASC".format(sys.argv[4])
+    # Create the query using format (as required)
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+
+    # Execute the query
     cursor.execute(query)
 
-    rows = cursor.fetchall()
-    for row in rows:
+    # Fetch and print all matching rows
+    for row in cursor.fetchall():
         print(row)
 
     cursor.close()
