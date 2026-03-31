@@ -50,4 +50,4 @@ google-chrome 0-main.html
 
 ## Author
 
-Holberton School — JavaScript DOM Manipulation Project
+**Amaal Asiri**, Holberton School — JavaScript DOM Manipulation Project
