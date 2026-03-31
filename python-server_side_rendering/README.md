@@ -96,4 +96,4 @@ python3 task_04_db.py
 
 ## Author
 
-Holberton School — Python Server-Side Rendering Project
+**Amaal Asiri**, Holberton School — Python Server-Side Rendering Project
